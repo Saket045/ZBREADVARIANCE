@@ -1,0 +1,34 @@
+managed  implementation in class zbp_r_repmatbread unique;
+strict ( 2 );
+
+define behavior for ZR_REPMATBREAD alias ZRREPMATBREAD
+persistent table zrepmatbread
+lock master
+authorization master ( global )
+//etag master <field_name>
+{
+  create ;
+  update;
+  delete;
+  field ( readonly:update ) Plant, Material, Rangedate, Todate;
+
+   mapping for zrepmatbread
+  {
+    Plant = plant;
+    Material = material;
+    Rangedate = rangedate;
+    Todate = todate;
+    Shift = shift;
+    Quantity = quantity;
+    Um = um;
+    ActualQty = actual_qty;
+    Difference = difference;
+    Batch = batch;
+    Storagelocation = storagelocation;
+    Movementtype = movementtype;
+    Matdesc = matdesc;
+
+  }
+
+
+}
